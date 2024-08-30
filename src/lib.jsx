@@ -1,7 +1,7 @@
 // components
-export const SectionS1=({ children, height="85vmin", id="" })=>{
+export const SectionS1=({ children, height="85vmin", id="", className="" })=>{
     return(<>
-        <section className="section" id={id} style={{height}}>
+        <section className={`${className} section`} id={id} style={{height}}>
             {/* <div className="textWrapper" id={`${id}_textWrapper`}> */}
                 {children}
             {/* </div> */}
@@ -40,10 +40,22 @@ export const Grid=()=>{
         <rect width="100%" height="100%" fill="url(#grid)" />
     </svg>);
 }
-export const Shade=({style})=>{return <div className="shade" style={style}></div>;}
-export const Stripe=({style})=>{return <div className="stripe" style={style}></div>;}
-export const BorderGlow=({style})=>{return <div className="borderglow" style={style}></div>;}
-export const BorderGlow_l=({style})=>{return <div className="borderglow_l" style={style}></div>;}
+export const Shade=({style={style}})=>{return <div className="shade" style={style}></div>;}
+export const Stripe=({style={},customStripColor})=>{
+    return <div className="stripe" style={
+        {
+            ...style,
+            background:`repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 5px,
+                ${customStripColor?customStripColor:"#121212"} 5px,
+                ${customStripColor?customStripColor:"#121212"} 10px
+            )`,
+        }
+    }></div>;}
+export const BorderGlow=({style={}})=>{return <div className="borderglow" style={style}></div>;}
+export const BorderGlow_l=({style={}})=>{return <div className="borderglow_l" style={style}></div>;}
 // functions
 export const generateId=(length)=>{
     let result='';

@@ -21,42 +21,80 @@ header {
         radial-gradient(transparent, #8f18df30),
         url("../../assets/images/bg1.png");
     background-attachment: fixed;
-    .txtlogo{
-        font-family: "M1dnight" !important;
-        font-size: 15vmin;
-        z-index: 10;
-        user-select: none;
-        transition: $g-trans;
+    .txtlogowrapper {
+        height: 100%;
+        width: 100%;
+        display: flex;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
-        z-index: 15;
-        color: $txt1;
-        filter: drop-shadow(0 0 30vmin $active);
-        &:hover{
-            transform: scale(115%) translate(-50%,-50%) translate(7.5%,7.5%);
+        z-index: 20;
+        .txtlogo{
+            font-family: "M1dnight" !important;
+            font-size: 15vmin;
+            z-index: 10;
+            user-select: none;
+            transition: $g-trans;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            z-index: 15;
+            color: $txt1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            filter: 
+                drop-shadow(0 0 5vmin #ffffff35)
+                drop-shadow(0 0 50vmin $active);
+            &:hover{
+                transform: scale(115%) translate(-50%,-50%) translate(7.5%,7.5%);
+                filter: 
+                    drop-shadow(0 0 1vmin $txt2)
+                    drop-shadow(0 0 20vmin $active)
+                    drop-shadow(0 0 50vmin $active);
+            }
+        }
+        .txtlogoshadow{
+            font-family: "M1dnight" !important;
+            font-size: 15vmin;
+            z-index: 10;
+            user-select: none;
+            transition: $g-trans;
+            color: $active;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            filter: 
+                blur(5vmin)
+                drop-shadow(0 0 50vmin $active)
+                drop-shadow(0 0 15vmin $active);
+            z-index: 14;
         }
     }
-    .txtlogoshadow{
-        font-family: "M1dnight" !important;
-        font-size: 15vmin;
-        z-index: 10;
-        user-select: none;
-        transition: $g-trans;
-        color: $active;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
+}
+.icon {
+    z-index: 20;
+    height: 30vmin;
+    filter: 
+        drop-shadow(0 0 5vmin #ffffff35)
+        drop-shadow(0 0 15vmin $active)
+        drop-shadow(0 0 30vmin $active)
+        drop-shadow(0 0 50vmin $active);
+    transition: $g-trans;
+    &:hover{
+        transform: scale(115%) rotate(5deg);
         filter: 
-            blur(5vmin)
-            drop-shadow(0 0 50vmin $active)
-            drop-shadow(0 0 15vmin $active);
-        z-index: 14;
+            drop-shadow(0 0 1vmin $txt2)
+            drop-shadow(0 0 5vmin $active)
+            drop-shadow(0 0 15vmin $active)
+            drop-shadow(0 0 50vmin $active);
     }
 }
 #s1 {
+    border-bottom: $outline;
     #s1l {
         background: $bg1;
         border-right: $outline;
@@ -69,6 +107,8 @@ header {
     }
     #s1r {
         background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
         /*fallback*/background-image: url("../../assets/images/bg2.png");
         background-image: 
             url("../../assets/images/bg2.png"),
@@ -77,6 +117,92 @@ header {
             height: 100% !important;
             aspect-ratio: auto !important;
             width: 100% !important;
+        }
+    }
+}
+.tpbg1{   
+    background-image: url("../../assets/images/purple-tech-bg.png");
+    background-attachment: fixed;
+    background-size: cover;
+}
+hr {
+    height: 1px;
+    width: 100%;
+    border: none;
+    border-top: $outline;
+}
+#s2_cd {
+    border: none;
+    .shade {
+        height: calc(100% + 1px);
+    }
+    /* .bgtxt {
+        z-index: 22;
+        font-size: 25vmin;
+        font-weight: bolder;
+        line-height: 22vmin;
+        letter-spacing: 2.5vmin;
+        opacity: .5;
+        filter: blur(1px) drop-shadow($txt3 0 0 2vmin);
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    } */
+    .codeRoadmapWrapper {
+        * {
+            filter: 
+                drop-shadow(0 0 15vmin $active);
+        }
+        height: calc(100% - 2vmin);
+        width: 150vmin;
+        h1 {
+            z-index: 22;
+            font-size: 10vmin;
+            text-align: center;
+            font-weight: bolder;
+            filter: 
+                drop-shadow(0 0 5vmin #ffffff50)
+                drop-shadow(0 0 15vmin $active)
+                drop-shadow(0 0 30vmin $active);
+        }
+        .codeRoadmap {
+            position: absolute;
+            bottom: 0%;
+            left: 50%;
+            transform: translateX(-50%);
+            // width: 100%;
+            width: fit-content;
+            padding: 0 3.5vmin;
+            height: 10vmin;
+            background: #19191975;
+            border: $outline;
+            border-radius: 3.5vmin;
+            backdrop-filter: blur(1vmin);
+            z-index: 25;
+            display: flex;
+            flex-direction: row;
+            gap: 1vmin;
+            filter:
+                drop-shadow(0 0 25vmin $active)
+                drop-shadow(0 0 30vmin $active);
+            .timelineIcon {
+                height: calc(100% - 5vmin);
+                cursor: pointer;
+                transition: $g-trans;
+                filter: drop-shadow(0 0 .5vmin $txt3);
+                &:hover {
+                    transform: scale(120%) /* translateY(-.5vmin) */;
+                }
+            }
+            .timelineLine {
+                width: 3.5vmin;
+                height: .35vmin;
+                background: $txt1;
+                margin: 0 1vmin;
+                border-radius: 2vmin;
+                opacity: .75;
+            }
         }
     }
 }
