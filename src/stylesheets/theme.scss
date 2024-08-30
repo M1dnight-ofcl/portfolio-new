@@ -1,0 +1,36 @@
+$bg1:#191919;
+$bg2:#232323;
+$bg3:#121212;
+$bg4:#272727;
+$bg5:#2e2e2e;
+$txt1:#f3f3f3;
+$txt2:#d7d7d7;
+$txt3:#c2c2c2;
+
+$active:#8f18df;
+$active_outline: 1px solid #7111b1;
+
+$outline: 1px solid #2a2a2a;
+$g-pad: 5vmin;
+$g-trans: .35s;
+$g-bordrad: 1.5vmin ;
+$g-glow: drop-shadow(0,0,1vmin,#ffffff75);
+
+$thumbBG: $bg2;
+$scrollbarBG: $bg1;
+$stripeBG: repeating-linear-gradient(
+    45deg,
+    $bg3,
+    $bg3 5px,
+    $bg1 5px,
+    $bg1 10px
+);
+$stripeBG_t: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 5px,
+    $bg3 5px,
+    $bg3 10px
+);
+
+@import url('https://fonts.cdnfonts.com/css/instrument-sans');

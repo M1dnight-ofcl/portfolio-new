@@ -1,0 +1,82 @@
+@import "defaultStyle_desktop";
+@import "theme";
+//------------------------------------------
+@font-face {
+    font-family: "M1dnight";
+    src: url(../../assets/fonts/doomed.ttf);
+}
+//------------------------------------------
+
+header {
+    height: 85vmin;
+    width: 100dvw;
+    background: $bg1;
+    display: flex;
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*fallback*/background-image: url("../../assets/images/bg1.png");
+    background-image: 
+        radial-gradient(transparent, #8f18df30),
+        url("../../assets/images/bg1.png");
+    background-attachment: fixed;
+    .txtlogo{
+        font-family: "M1dnight" !important;
+        font-size: 15vmin;
+        z-index: 10;
+        user-select: none;
+        transition: $g-trans;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        z-index: 15;
+        color: $txt1;
+        filter: drop-shadow(0 0 30vmin $active);
+        &:hover{
+            transform: scale(115%) translate(-50%,-50%) translate(7.5%,7.5%);
+        }
+    }
+    .txtlogoshadow{
+        font-family: "M1dnight" !important;
+        font-size: 15vmin;
+        z-index: 10;
+        user-select: none;
+        transition: $g-trans;
+        color: $active;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        filter: 
+            blur(5vmin)
+            drop-shadow(0 0 50vmin $active)
+            drop-shadow(0 0 15vmin $active);
+        z-index: 14;
+    }
+}
+#s1 {
+    #s1l {
+        background: $bg1;
+        border-right: $outline;
+        background-image: 
+            radial-gradient(transparent, #8f18df15);
+        * {
+            filter: 
+                drop-shadow(0 0 20vmin $active);
+        }
+    }
+    #s1r {
+        background-attachment: fixed;
+        /*fallback*/background-image: url("../../assets/images/bg2.png");
+        background-image: 
+            url("../../assets/images/bg2.png"),
+            radial-gradient(transparent, #8f18df15);
+        .textWrapper { 
+            height: 100% !important;
+            aspect-ratio: auto !important;
+            width: 100% !important;
+        }
+    }
+}
