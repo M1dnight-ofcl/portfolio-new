@@ -15,14 +15,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faHtml5, faPython, faJsSquare, faReact, faSass, faAndroid } from '@fortawesome/free-brands-svg-icons';
 const App=()=>{
-  const TimelineIcon=({ icon })=>{
+  /* const TimelineIcon=({ icon })=>{
     return(<>
       <FontAwesomeIcon icon={icon} className="timelineIcon" />
     </>);
   }
   const TimelineSeperator=()=>{
     return(<><div className='timelineLine'></div></>);
-  }
+  } */
   return (<>
     <Helmet>
       <title>M1dnight's Portfolio</title>
@@ -62,8 +62,8 @@ const App=()=>{
         <FontAwesomeIcon icon={faUser} className='icon' />
       </Right>
     </SectionS1>
-    {/* <hr /> */}
-    <SectionS1 id="s2_cd" className="tpbg1">
+    <>
+    {/* <SectionS1 id="s2_cd" className="tpbg1">
       <Shade style={{
         background:"#191919a0",
         backdropFilter:"blur(1vmin) hue-rotate(20deg)",
@@ -78,8 +78,13 @@ const App=()=>{
           <TimelineIcon icon={faSass} id="tabicon_sass" /><TimelineSeperator />
           <TimelineIcon icon={faAndroid} id="tabicon_kotline" />
         </div>
+        <div id="cr_contentWrapper">
+          
+        </div>
       </div>
-    </SectionS1>
+    </SectionS1> */}
+    </>
+    
   </>);
 }
 export default App;

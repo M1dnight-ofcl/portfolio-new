@@ -26,15 +26,15 @@ export const Right=({children,id=""})=>{
         </div>
     </>);
 }
-export const Grid=()=>{
+export const Grid=({ customColor="#2a2a2a" })=>{
     return(<svg width="120%" height="120%" xmlns="http://www.w3.org/2000/svg" className="grid">
         <defs>
             <pattern id="smallGrid" width="35" height="35" patternUnits="userSpaceOnUse">
-                <path d="M 35 0 L 0 0 0 35" fill="none" stroke="#2a2a2a" strokeWidth="1"/>
+                <path d="M 35 0 L 0 0 0 35" fill="none" stroke={customColor} strokeWidth="1"/>
             </pattern>
             <pattern id="grid" width="350" height="350" patternUnits="userSpaceOnUse">
                 <rect width="350" height="350" fill="url(#smallGrid)"/>
-                <path d="M 350 0 L 0 0 0 350" fill="none" stroke="#2a2a2a" strokeWidth="1"/>
+                <path d="M 350 0 L 0 0 0 350" fill="none" stroke={customColor} strokeWidth="1"/>
             </pattern>
         </defs>
         <rect width="100%" height="100%" fill="url(#grid)" />
