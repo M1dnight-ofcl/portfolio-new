@@ -12,6 +12,7 @@ header {
     width: 100dvw;
     background: $bg1;
     display: flex;
+    gap: 1vmin;
     overflow: hidden;
     background-position: center;
     background-repeat: no-repeat;
@@ -21,7 +22,7 @@ header {
         radial-gradient(transparent, #8f18df30),
         url("../../assets/images/bg1.png");
     background-attachment: fixed;
-    .txtlogowrapper {
+    /* .txtlogowrapper {
         height: 100%;
         width: 100%;
         display: flex;
@@ -29,49 +30,72 @@ header {
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
+        z-index: 20; 
+    }*/
+    .txtlogo{
+        font-family: "M1dnight" !important;
+        font-size: 15vmin;
+        z-index: 10;
+        user-select: none;
+        transition: $g-trans;
+        position: absolute;
+        top: 50%;
+        left: calc(50% + 1%);
+        transform: translate(-50%,-50%);
+        z-index: 15;
+        color: $txt1;
+        display: flex;
+        filter: 
+            drop-shadow(0 0 5vmin #ffffff35)
+            drop-shadow(0 0 50vmin $active);
+        &:hover{
+            transform: scale(115%) translate(-50%,-50%) translate(7.5%,7.5%);
+            filter: 
+                drop-shadow(0 0 1vmin $txt2)
+                drop-shadow(0 0 20vmin $active)
+                drop-shadow(0 0 50vmin $active);
+        }
+    }
+    .txtlogoshadow{
+        font-family: "M1dnight" !important;
+        font-size: 15vmin;
+        z-index: 10;
+        user-select: none;
+        transition: $g-trans;
+        color: $active;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        filter: 
+            blur(5vmin)
+            drop-shadow(0 0 50vmin $active)
+            drop-shadow(0 0 15vmin $active);
+        z-index: 14;
+    }
+    .hwrapper {
+        display: flex;
+        position: absolute;
+        top: calc(50% + 15vmin);
+        left: 50%;
+        transform: translate(-50%,-50%);
+        padding: 2vmin;
         z-index: 20;
-        .txtlogo{
-            font-family: "M1dnight" !important;
-            font-size: 15vmin;
-            z-index: 10;
-            user-select: none;
+        .h1 {
+            z-index: 20;
+            font-size: 3vmin;
             transition: $g-trans;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-            z-index: 15;
-            color: $txt1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            user-select: none;
             filter: 
                 drop-shadow(0 0 5vmin #ffffff35)
                 drop-shadow(0 0 50vmin $active);
             &:hover{
-                transform: scale(115%) translate(-50%,-50%) translate(7.5%,7.5%);
+                transform: scale(115%);
                 filter: 
                     drop-shadow(0 0 1vmin $txt2)
                     drop-shadow(0 0 20vmin $active)
                     drop-shadow(0 0 50vmin $active);
             }
-        }
-        .txtlogoshadow{
-            font-family: "M1dnight" !important;
-            font-size: 15vmin;
-            z-index: 10;
-            user-select: none;
-            transition: $g-trans;
-            color: $active;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-            filter: 
-                blur(5vmin)
-                drop-shadow(0 0 50vmin $active)
-                drop-shadow(0 0 15vmin $active);
-            z-index: 14;
         }
     }
 }
@@ -93,31 +117,45 @@ header {
             drop-shadow(0 0 50vmin $active);
     }
 }
+@mixin ImageSide {
+    height: calc(100% + 1px);
+    .grid {
+        height: 100%;
+        width: 100%;
+        max-height: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    .textWrapper { 
+        height: 100% !important;
+        aspect-ratio: auto !important;
+        width: 100% !important;
+    }
+}
+@mixin TextSide {
+    background: $bg1;
+    background-image: 
+        radial-gradient(transparent, #8f18df15);
+    * {
+        filter: 
+            drop-shadow(0 0 20vmin $active);
+    }
+}
 #s1 {
-    border-bottom: $outline;
+    border-top: $outline;
     #s1l {
-        background: $bg1;
         border-right: $outline;
-        background-image: 
-            radial-gradient(transparent, #8f18df15);
-        * {
-            filter: 
-                drop-shadow(0 0 20vmin $active);
-        }
+        @include TextSide;
     }
     #s1r {
-        background-attachment: fixed;
-        background-position: center;
-        background-size: cover;
+        @include ImageSide;
         /*fallback*/background-image: url("../../assets/images/bg2.png");
         background-image: 
             url("../../assets/images/bg2.png"),
             radial-gradient(transparent, #8f18df15);
-        .textWrapper { 
-            height: 100% !important;
-            aspect-ratio: auto !important;
-            width: 100% !important;
-        }
     }
 }
 .tpbg1{   
@@ -131,96 +169,298 @@ hr {
     border: none;
     border-top: $outline;
 }
-// #s2_cd {
-//     border: none;
-//     overflow: hidden;
-//     .shade {
-//         height: calc(100% + 1px);
-//     }
-//     /* .bgtxt {
-//         z-index: 22;
-//         font-size: 25vmin;
-//         font-weight: bolder;
-//         line-height: 22vmin;
-//         letter-spacing: 2.5vmin;
-//         opacity: .5;
-//         filter: blur(1px) drop-shadow($txt3 0 0 2vmin);
-//         position: absolute;
-//         top: 45%;
-//         left: 50%;
-//         transform: translate(-50%,-50%);
-//     } */
-//     .codeRoadmapWrapper {
-//         * {
-//             filter: 
-//                 drop-shadow(0 0 15vmin $active);
-//         }
-//         height: calc(100% - 2vmin);
-//         width: 150vmin;
-//         h1 {
-//             z-index: 22;
-//             font-size: 10vmin;
-//             text-align: center;
-//             font-weight: bolder;
-//             filter: 
-//                 drop-shadow(0 0 5vmin #ffffff50)
-//                 drop-shadow(0 0 15vmin $active)
-//                 drop-shadow(0 0 30vmin $active);
-//         }
-//         .codeRoadmap {
-//             position: absolute;
-//             bottom: 0%;
-//             left: 50%;
-//             transform: translateX(-50%);
-//             // width: 100%;
-//             width: fit-content;
-//             padding: 0 3.5vmin;
-//             height: 10vmin;
-//             background: #19191975;
-//             border: $outline;
-//             border-radius: 3.5vmin;
-//             backdrop-filter: blur(1vmin);
-//             z-index: 25;
-//             display: flex;
-//             flex-direction: row;
-//             gap: 1vmin;
-//             filter:
-//                 drop-shadow(0 0 25vmin $active)
-//                 drop-shadow(0 0 30vmin $active);
-//             .timelineIcon {
-//                 height: calc(100% - 5vmin);
-//                 cursor: pointer;
-//                 transition: $g-trans;
-//                 filter: drop-shadow(0 0 .5vmin $txt3);
-//                 &:hover {
-//                     transform: scale(120%) /* translateY(-.5vmin) */;
-//                 }
-//             }
-//             .timelineLine {
-//                 width: 3.5vmin;
-//                 height: .35vmin;
-//                 background: $txt1;
-//                 margin: 0 1vmin;
-//                 border-radius: 2vmin;
-//                 opacity: .75;
-//             }
-//         }
-//         #cr_contentWrapper {
-//             height: calc(100% - 25vmin);
-//             width: 100vmin;
-//             display: flex;
-//             position: absolute;
-//             bottom: 12.5vmin;
-//             left: 50%;
-//             transform: translateX(-50%);
-//             background: #000;
-//             z-index: 21;
-//             background: #19191975;
-//             border: $outline;
-//             border-radius: 3.5vmin;
-//             backdrop-filter: blur(1vmin);
-//             z-index: 27;
-//             filter: drop-shadow(0 0 15vmin #8f18df90);
-//         }
-//     }
-// }
+/*#s2_cd {
+    border: none;
+    overflow: hidden;
+    .shade {
+        height: calc(100% + 1px);
+    }
+    \/\* .bgtxt {
+        z-index: 22;
+        font-size: 25vmin;
+        font-weight: bolder;
+        line-height: 22vmin;
+        letter-spacing: 2.5vmin;
+        opacity: .5;
+        filter: blur(1px) drop-shadow($txt3 0 0 2vmin);
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    } \*\/
+    .codeRoadmapWrapper {
+        * {
+            filter: 
+                drop-shadow(0 0 15vmin $active);
+        }
+        height: calc(100% - 2vmin);
+        width: 150vmin;
+        h1 {
+            z-index: 22;
+            font-size: 10vmin;
+            text-align: center;
+            font-weight: bolder;
+            filter: 
+                drop-shadow(0 0 5vmin #ffffff50)
+                drop-shadow(0 0 15vmin $active)
+                drop-shadow(0 0 30vmin $active);
+        }
+        .codeRoadmap {
+            position: absolute;
+            bottom: 0%;
+            left: 50%;
+            transform: translateX(-50%);
+            // width: 100%;
+            width: fit-content;
+            padding: 0 3.5vmin;
+            height: 10vmin;
+            background: #19191975;
+            border: $outline;
+            border-radius: 3.5vmin;
+            backdrop-filter: blur(1vmin);
+            z-index: 25;
+            display: flex;
+            flex-direction: row;
+            gap: 1vmin;
+            filter:
+                drop-shadow(0 0 25vmin $active)
+                drop-shadow(0 0 30vmin $active);
+            .timelineIcon {
+                height: calc(100% - 5vmin);
+                cursor: pointer;
+                transition: $g-trans;
+                filter: drop-shadow(0 0 .5vmin $txt3);
+                &:hover {
+                    transform: scale(120%) \/\* translateY(-.5vmin) \*\/;
+                }
+            }
+            .timelineLine {
+                width: 3.5vmin;
+                height: .35vmin;
+                background: $txt1;
+                margin: 0 1vmin;
+                border-radius: 2vmin;
+                opacity: .75;
+            }
+        }
+        #cr_contentWrapper {
+            height: calc(100% - 25vmin);
+            width: 100vmin;
+            display: flex;
+            position: absolute;
+            bottom: 12.5vmin;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #000;
+            z-index: 21;
+            background: #19191975;
+            border: $outline;
+            border-radius: 3.5vmin;
+            backdrop-filter: blur(1vmin);
+            z-index: 27;
+            filter: drop-shadow(0 0 15vmin #8f18df90);
+        }
+    }
+}*/
+#s2 {
+    border-top: $outline;
+    #s2l {
+        @include ImageSide;
+        border-right: $outline;
+        /*fallback*/background-image: url("../../assets/images/bg1.png");
+        background-image: 
+            url("../../assets/images/bg1.png"),
+            radial-gradient(transparent, #8f18df15);
+    }
+    #s2r {
+        @include TextSide;
+    }
+}
+#s3 {
+    border-top: $outline;
+    #s3l {
+        @include TextSide;
+        border-right: $outline;
+    }
+    #s3r {
+        @include ImageSide;
+        *:not(.icon){width: calc(100% + 2px);}
+        /*fallback*/background-image: url("../../assets/images/bg3.png");
+        background-image: 
+            url("../../assets/images/bg3.png"),
+            radial-gradient(transparent, #8f18df15);
+    }
+}
+.SectionS2 {
+    border-top: $outline;
+    padding: 5vmin;
+    width: 100dvw;
+    height: fit-content;
+    z-index: 15;
+    display: flex;
+    gap: 1vmin;
+    * {
+        width: 150vmin;
+        filter: drop-shadow(0 0 20vmin #8f18df50);
+    }
+    background: $bg1;
+    background-image: radial-gradient(transparent, #8f18df20);
+    .Title {
+        font-size: 8.5vmin;
+        font-weight: bolder;
+    }
+    .Desc {
+        font-size: 3.5vmin;
+    }
+    hr {
+        margin: 2vmin 0;
+        border-top: 1px $txt-dim solid;
+    }
+}
+.project {
+    padding: 3.5vmin;
+    min-height: 35vmin;
+    background: $bg2;
+    border: $outline;
+    border-radius: $g-bordrad;
+    // background-image: radial-gradient(transparent, #8f18df10);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    *:not(:last-child,.project_mockup) {
+        margin-bottom: .5vmin;
+    }
+    h1 {
+        font-size: 5vmin;
+        font-weight: bold;
+        text-shadow: 0 0 20vmin $active;
+        z-index: 30;
+    }
+    p {
+        font-size: 2.5vmin;
+        text-shadow: 0 0 20vmin $active;
+        z-index: 30;
+        width: 50%;
+        margin-bottom: 3.5vmin !important;
+    }
+    .project_mockup {
+        position: absolute;
+        max-width: 50%;
+        top: 50%;
+        width: calc(50% - 10vmin);
+        transform: translateY(-50%);
+        right: 3.5vmin;
+        height: calc(100% - 3.5vmin);
+        // background: #000;
+        z-index: 25;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        filter: 
+            // drop-shadow(0 0 25vmin $txt-dim)
+            drop-shadow(0 0 10vmin #8f18df50)
+            drop-shadow(0 0 15vmin #8f18df50)
+            drop-shadow(0 0 30vmin $active);
+        transition: $g-trans;
+        /* &:hover{
+            filter: 
+                drop-shadow(0 0 3.5vmin $txt3)
+                drop-shadow(0 0 5vmin #8f18df35)
+                drop-shadow(0 0 15vmin #8f18dfd0)
+                drop-shadow(0 0 30vmin $active);
+            transform: scale(105%) translateY(-50%) translateY(calc(5% / 2));
+        } */
+    }
+    button{z-index: 30;}
+    overflow: hidden;
+}
+a {
+    height: fit-content;
+    width: fit-content;
+    text-decoration: none;
+    z-index: 30;
+}
+.Button01 {
+    width: fit-content;
+    height: auto;
+    border: $outline;
+    transition: $g-trans;
+    border-radius: $g-bordrad;
+    padding: 1.5vmin 5vmin;
+    font-size: 2vmin;
+    background: $bg1;
+    color: $txt2;
+    cursor: pointer;
+    background-image: radial-gradient(transparent, #8f18df25);
+    filter: 
+        drop-shadow(0 0 5vmin #8f18df35)
+        drop-shadow(0 0 15vmin $active)
+        drop-shadow(0 0 30vmin $active);
+    &:hover {
+        transform: scale(110%);
+        background: $active;
+        color: $txt1;
+        border: $active_outline;
+        filter: 
+            drop-shadow(0 0 5vmin $active)
+            drop-shadow(0 0 15vmin $active)
+            drop-shadow(0 0 30vmin $active);
+    }
+}
+#project_todura {
+    /*fallback*/background-image: url("../../assets/images/bg3.png");
+    background-image: 
+        url("../../assets/images/bg3.png"),
+        radial-gradient(transparent, #8f18df15);
+    #todura_mockup {
+        background-image: url("../../assets/images/ToduraUI.png");
+    }
+}
+#project_mbxp {
+    /*fallback*/background-image: url("../../assets/images/bgmbxp.png");
+    background-image: 
+        url("../../assets/images/bgmbxp.png"),
+        radial-gradient(transparent, #8f18df15);
+    #mbxp_mockup {
+        aspect-ratio: 16 / 9;
+        height: fit-content;
+        border-radius: 1vmin;
+        background-image: url("../../assets/images/BeansiteXPUI.jpg");
+    }
+}
+#project_mb95 {
+    /*fallback*/background-image: url("../../assets/images/Beansite95UI.png");
+    background-image: 
+        url("../../assets/images/Beansite95UI.png"),
+        radial-gradient(transparent, #8f18df15);
+    #mb95_mockup {
+        aspect-ratio: 16 / 9;
+        height: fit-content;
+        border-radius: 1vmin;
+        background-image: url("../../assets/images/Beansite95UI.png");
+    }
+}
+#project_fluxm {
+    /*fallback*/background-image: url("../../assets/images/FluxMacroUI.png");
+    background-image: 
+        url("../../assets/images/FluxMacroUI.png"),
+        radial-gradient(transparent, #8f18df15);
+    #fluxm_mockup {
+        aspect-ratio: 16 / 9;
+        height: fit-content;
+        border-radius: 1vmin;
+        background-image: url("../../assets/images/FluxMacroUI.png");
+    }
+}
+#project_eggsh {
+    /*fallback*/background-image: url("../../assets/images/eggshUI.png");
+    background-image: 
+        url("../../assets/images/eggshUI.png"),
+        radial-gradient(transparent, #8f18df15);
+    #eggsh_mockup {
+        aspect-ratio: 16 / 9;
+        height: fit-content;
+        border-radius: 1vmin;
+        background-image: url("../../assets/images/eggshUI.png");
+    }
+}

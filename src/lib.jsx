@@ -40,7 +40,8 @@ export const Grid=({ customColor="#2a2a2a" })=>{
         <rect width="100%" height="100%" fill="url(#grid)" />
     </svg>);
 }
-export const Shade=({style={style}})=>{return <div className="shade" style={style}></div>;}
+export const Shade=({style={}})=>{return <div className="shade" style={style}></div>;}
+export const Topography=({style={}})=>{return <div className="topography" style={style}></div>;}
 export const Stripe=({style={},customStripColor})=>{
     return <div className="stripe" style={
         {

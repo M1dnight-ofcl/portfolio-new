@@ -128,6 +128,12 @@ body {
     background: $stripeBG_t;
 }
 
+.topography {
+    @include PositionCetnerOverlay;
+    @include OccupyFull;
+    background-image: url("../../assets/images/topography-t.png");
+}
+
 #loading {
     position: fixed;
     height: 100dvh;
