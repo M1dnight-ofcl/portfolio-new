@@ -147,6 +147,20 @@ const App=()=>{
       </p>
       <hr />
       <Project project={{
+        title:"Todura V2",
+        id:"todurav2",
+      }}>
+        <p>
+          An improved task management app, and the successor to Todura. With an improved ui 
+          written in ReactJS using Framer Motion and Sass. It was a project I created to see 
+          just how far my skills had improved in a year, and also just for fun as I was bored 
+          and wanted a new project to work on.
+        </p>
+        <div className='project_mockup' id="todurav2_mockup"></div>
+        <a href="https://todura-v2.vercel.app">
+          <button className='Button01'>Check It Out</button></a>
+      </Project>
+      <Project project={{
         title:"Beansite XP",
         id:"mbxp",
       }}>

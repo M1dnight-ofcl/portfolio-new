@@ -464,3 +464,15 @@ a {
         background-image: url("../../assets/images/eggshUI.png");
     }
 }
+#project_todurav2 {
+    /*fallback*/background-image: url("../../assets/images/todurav2UI.png");
+    background-image: 
+        url("../../assets/images/todurav2UI.png"),
+        radial-gradient(transparent, #8f18df15);
+    #todurav2_mockup {
+        aspect-ratio: 16 / 9;
+        height: fit-content;
+        border-radius: 1vmin;
+        background-image: url("../../assets/images/todurav2UI.png");
+    }
+}
