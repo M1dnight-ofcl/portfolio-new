@@ -3,7 +3,7 @@
 //------------------------------------------
 @font-face {
     font-family: "M1dnight";
-    src: url(../../assets/fonts/doomed.ttf);
+    src: url(../assets/fonts/doomed.ttf);
 }
 //------------------------------------------
 
@@ -17,10 +17,10 @@ header {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    /*fallback*/background-image: url("../../assets/images/bg1.png");
+    /*fallback*/background-image: url("../assets/images/bg1.png");
     background-image: 
         radial-gradient(transparent, #8f18df30),
-        url("../../assets/images/bg1.png");
+        url("../assets/images/bg1.png");
     background-attachment: fixed;
     /* .txtlogowrapper {
         height: 100%;
@@ -152,14 +152,14 @@ header {
     }
     #s1r {
         @include ImageSide;
-        /*fallback*/background-image: url("../../assets/images/bg2.png");
+        /*fallback*/background-image: url("../assets/images/bg2.png");
         background-image: 
-            url("../../assets/images/bg2.png"),
+            url("../assets/images/bg2.png"),
             radial-gradient(transparent, #8f18df15);
     }
 }
 .tpbg1{   
-    background-image: url("../../assets/images/purple-tech-bg.png");
+    background-image: url("../assets/images/purple-tech-bg.png");
     background-attachment: fixed;
     background-size: cover;
 }
@@ -267,9 +267,9 @@ hr {
     #s2l {
         @include ImageSide;
         border-right: $outline;
-        /*fallback*/background-image: url("../../assets/images/bg1.png");
+        /*fallback*/background-image: url("../assets/images/bg1.png");
         background-image: 
-            url("../../assets/images/bg1.png"),
+            url("../assets/images/bg1.png"),
             radial-gradient(transparent, #8f18df15);
     }
     #s2r {
@@ -285,13 +285,39 @@ hr {
     #s3r {
         @include ImageSide;
         *:not(.icon){width: calc(100% + 2px);}
-        /*fallback*/background-image: url("../../assets/images/bg3.png");
+        /*fallback*/background-image: url("../assets/images/bg3.png");
         background-image: 
-            url("../../assets/images/bg3.png"),
+            url("../assets/images/bg3.png"),
             radial-gradient(transparent, #8f18df15);
     }
 }
 .SectionS2 {
+    border-top: $outline;
+    padding: 5vmin;
+    width: 100dvw;
+    height: fit-content;
+    z-index: 15;
+    display: flex;
+    gap: 1vmin;
+    * {
+        width: 150vmin;
+        filter: drop-shadow(0 0 20vmin #8f18df50);
+    }
+    background: $bg1;
+    background-image: radial-gradient(transparent, #8f18df20);
+    .Title {
+        font-size: 8.5vmin;
+        font-weight: bolder;
+    }
+    .Desc {
+        font-size: 3.5vmin;
+    }
+    hr {
+        margin: 2vmin 0;
+        border-top: 1px $txt-dim solid;
+    }
+}
+.SectionS3 {
     border-top: $outline;
     padding: 5vmin;
     width: 100dvw;
@@ -408,71 +434,130 @@ a {
     }
 }
 #project_todura {
-    /*fallback*/background-image: url("../../assets/images/bg3.png");
+    /*fallback*/background-image: url("../assets/images/bg3.png");
     background-image: 
-        url("../../assets/images/bg3.png"),
+        url("../assets/images/bg3.png"),
         radial-gradient(transparent, #8f18df15);
     #todura_mockup {
-        background-image: url("../../assets/images/ToduraUI.png");
+        background-image: url("../assets/images/ToduraUI.png");
     }
 }
 #project_mbxp {
-    /*fallback*/background-image: url("../../assets/images/bgmbxp.png");
+    /*fallback*/background-image: url("../assets/images/bgmbxp.png");
     background-image: 
-        url("../../assets/images/bgmbxp.png"),
+        url("../assets/images/bgmbxp.png"),
         radial-gradient(transparent, #8f18df15);
     #mbxp_mockup {
         aspect-ratio: 16 / 9;
         height: fit-content;
         border-radius: 1vmin;
-        background-image: url("../../assets/images/BeansiteXPUI.jpg");
+        background-image: url("../assets/images/BeansiteXPUI.jpg");
     }
 }
 #project_mb95 {
-    /*fallback*/background-image: url("../../assets/images/Beansite95UI.png");
+    /*fallback*/background-image: url("../assets/images/Beansite95UI.png");
     background-image: 
-        url("../../assets/images/Beansite95UI.png"),
+        url("../assets/images/Beansite95UI.png"),
         radial-gradient(transparent, #8f18df15);
     #mb95_mockup {
         aspect-ratio: 16 / 9;
         height: fit-content;
         border-radius: 1vmin;
-        background-image: url("../../assets/images/Beansite95UI.png");
+        background-image: url("../assets/images/Beansite95UI.png");
     }
 }
 #project_fluxm {
-    /*fallback*/background-image: url("../../assets/images/FluxMacroUI.png");
+    /*fallback*/background-image: url("../assets/images/FluxMacroUI.png");
     background-image: 
-        url("../../assets/images/FluxMacroUI.png"),
+        url("../assets/images/FluxMacroUI.png"),
         radial-gradient(transparent, #8f18df15);
     #fluxm_mockup {
         aspect-ratio: 16 / 9;
         height: fit-content;
         border-radius: 1vmin;
-        background-image: url("../../assets/images/FluxMacroUI.png");
+        background-image: url("../assets/images/FluxMacroUI.png");
     }
 }
 #project_eggsh {
-    /*fallback*/background-image: url("../../assets/images/eggshUI.png");
+    /*fallback*/background-image: url("../assets/images/eggshUI.png");
     background-image: 
-        url("../../assets/images/eggshUI.png"),
+        url("../assets/images/eggshUI.png"),
         radial-gradient(transparent, #8f18df15);
     #eggsh_mockup {
         aspect-ratio: 16 / 9;
         height: fit-content;
         border-radius: 1vmin;
-        background-image: url("../../assets/images/eggshUI.png");
+        background-image: url("../assets/images/eggshUI.png");
     }
 }
 #project_todurav2 {
-    /*fallback*/background-image: url("../../assets/images/todurav2UI.png");
+    /*fallback*/background-image: url("../assets/images/todurav2UI.png");
     background-image: 
-        url("../../assets/images/todurav2UI.png"),
+        url("../assets/images/todurav2UI.png"),
         radial-gradient(transparent, #8f18df15);
     #todurav2_mockup {
         aspect-ratio: 16 / 9;
         height: fit-content;
         border-radius: 1vmin;
-        background-image: url("../../assets/images/todurav2UI.png");
+        background-image: url("../assets/images/todurav2UI.png");
+    }
+}
+#project_sproj {
+    /*fallback*/background-image: url("../assets/images/sproj.png");
+    background-image: 
+        url("../assets/images/sproj.png"),
+        radial-gradient(transparent, #8f18df15);
+    background-size: 135%;
+    #sproj_mockup {
+        aspect-ratio: 16 / 9;
+        height: 90%;
+        border-radius: 1vmin;
+        overflow: hidden;
+        background-image: url("../assets/images/sproj.png");
+    }
+}
+#project_isowproj {
+    /*fallback*/background-image: url("../assets/images/isowproj.png");
+    background-image: 
+        url("../assets/images/isowproj.png"),
+        radial-gradient(transparent, #8f18df15);
+    background-size: 135%;
+    #isowproj_mockup {
+        aspect-ratio: 16 / 9;
+        height: 90%;
+        // width: fit-content;
+        border-radius: 1vmin;
+        overflow: hidden;
+        background-image: url("../assets/images/isowproj.png");
+    }
+}
+#project_fhdproj {
+    /*fallback*/background-image: url("../assets/images/fhdproj.png");
+    background-image: 
+        url("../assets/images/fhdproj.png"),
+        radial-gradient(transparent, #8f18df15);
+    background-size: 135%;
+    #fhdproj_mockup {
+        aspect-ratio: 16 / 9;
+        height: 90%;
+        // width: fit-content;
+        border-radius: 1vmin;
+        overflow: hidden;
+        background-image: url("../assets/images/fhdproj.png");
+    }
+}
+#project_cubeproj {
+    /*fallback*/background-image: url("../assets/images/cubeproj.png");
+    background-image: 
+        url("../assets/images/cubeproj.png"),
+        radial-gradient(transparent, #8f18df15);
+    background-size: 135%;
+    #cubeproj_mockup {
+        aspect-ratio: 16 / 9;
+        height: 90%;
+        // width: fit-content;
+        border-radius: 1vmin;
+        overflow: hidden;
+        background-image: url("../assets/images/cubeproj.png");
     }
 }

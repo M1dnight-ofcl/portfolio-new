@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './stylesheets/style/style.css';
+import './stylesheets/style.scss';
 import { 
   SectionS1, 
   Grid, 
@@ -234,6 +234,59 @@ const App=()=>{
         <div className='project_mockup' id="todura_mockup"></div>
         <a href="https://github.com/M1dnight-ofcl/Todura">
           <button className='Button01'>Check It Out</button></a>
+      </Project>
+    </div>
+    <div className='SectionS3'>
+      <h1 className='Title'>My Engineering Projects</h1>
+      <p className='Desc'>
+        A Collection of My Engineering projects Projects
+      </p>
+      <hr />
+      <Project project={{
+        title:"Interlocking Shapes Project",
+        id:"sproj",
+      }}>
+        <p>
+          My first project learning autocad. I think a comprehension of 
+          computers beforehand assisted in my success, but the lack of 
+          understanding for the program shows.
+        </p>
+        <div className='project_mockup' id="sproj_mockup"></div>
+      </Project>
+      <Project project={{
+        title:"Isometric World Project",
+        id:"isowproj",
+      }}>
+        <p>
+          My final project in autocad. I'd say my progress is well displayed 
+          by the intricate interlocking pathways and tunnels, with flowing 
+          rivers and reality bending illusions. 
+        </p>
+        <div className='project_mockup' id="isowproj_mockup"></div>
+      </Project>
+      <Project project={{
+        title:"Family House Design",
+        id:"fhdproj",
+      }}>
+        <p>
+          This was my final Revit project. I was never particularly good at Revit, 
+          as much yearned for CAD programs such as Autocad or Inventor. Still, I felt
+          my design much captured what I needed in a house, althought I would've liked a 
+          personal gym.
+        </p>
+        <div className='project_mockup' id="fhdproj_mockup"></div>
+      </Project>
+      <Project project={{
+        title:"Cube Puzzle Project",
+        id:"cubeproj",
+      }}>
+        <p>
+          This was my final Revit project. I was never particularly good at Revit, 
+          as much yearned for CAD programs such as Autocad or Inventor. Still, I felt
+          my design much captured what I needed in a house, althought I would've liked a 
+          personal gym.
+        </p>
+        <div className='project_mockup' id="cubeproj_mockup"></div>
       </Project>
     </div>
   </>);
